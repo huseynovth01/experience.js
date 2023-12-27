@@ -1,3 +1,10 @@
+var btntommy = document.getElementById('tommy');
+var btnbidgroup = document.getElementById('bidgroup');
+var btncuker = document.getElementById('cuker');
+var container = document.querySelector('.container');
+var optioncontent = document.getElementById('optioncontent');
+
+
 //active classi secmey ucun
 
 document.querySelectorAll('.options .option').forEach(btn=>{
@@ -7,12 +14,8 @@ document.querySelectorAll('.options .option').forEach(btn=>{
     });
 });
 
+//---------------------------------------
 
-var btntommy = document.getElementById('tommy');
-var btnbidgroup = document.getElementById('bidgroup');
-var btncuker = document.getElementById('cuker');
-var container = document.querySelector('.container');
-var optioncontent = document.getElementById('optioncontent');
 
 var array= [
     {
@@ -34,6 +37,26 @@ var array= [
         date:"November 2017 - present",  
     },
 ]
+//---------------------------------------
+
+
+//butonlara click edtdikde listi gostermek ucun -
+
+btntommy.addEventListener("click", function(){
+    choseObject("Tommy");
+});
+
+btnbidgroup.addEventListener("click", function(){
+    choseObject("BIDGROUP");
+});
+
+btncuker.addEventListener("click", function(){
+    choseObject("CUKER");
+});
+
+//---------------------------------------
+
+
 
 function choseObject(name){
     container.innerHTML = "";
@@ -73,17 +96,18 @@ function choseObject(name){
     mydiv.appendChild(btnshow);
 }
 
-btntommy.addEventListener("click", function(){
-    choseObject("Tommy");
+//refresh etdikde ekranda secdiyimiz metni gosterir
+
+window.addEventListener('load', function(){
+    btntommy.click();
 });
 
-btnbidgroup.addEventListener("click", function(){
-    choseObject("BIDGROUP");
-});
+//----------------------------------
 
-btncuker.addEventListener("click", function(){
-    choseObject("CUKER");
-});
+
+
+
+
 
 
 

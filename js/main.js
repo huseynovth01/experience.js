@@ -4,18 +4,7 @@ var btncuker = document.getElementById('cuker');
 var container = document.querySelector('.container');
 var optioncontent = document.getElementById('optioncontent');
 
-
-//active classi secmey ucun
-
-document.querySelectorAll('.options .option').forEach(btn=>{
-    btn.addEventListener('click', function(){
-        document.querySelector('.active').classList.remove('active');
-        this.classList.add('active');
-    });
-});
-
 //---------------------------------------
-
 
 var array= [
     {
@@ -37,8 +26,8 @@ var array= [
         date:"November 2017 - present",  
     },
 ]
-//---------------------------------------
 
+//---------------------------------------
 
 //butonlara click edtdikde listi gostermek ucun -
 
@@ -55,8 +44,6 @@ btncuker.addEventListener("click", function(){
 });
 
 //---------------------------------------
-
-
 
 function choseObject(name){
     container.innerHTML = "";
@@ -120,21 +107,17 @@ span2.style.display = "none";
 
 btnshow.addEventListener("click", function () {
   if (span2.style.display === "block") {
-    // Daha fazla göster butonu tıklanırsa
     span2.style.display = "none";
     btnshow.textContent = "more";
     span1.textContent = lessText + "...";
-  } else {
-
+  }
+   else {
     span2.style.display = "block";
     btnshow.textContent = "less";
     span1.textContent = hiddenText + " " + hiddenText;
   }
-});
-
-//---------------------------------------
-  
-}
+}) 
+};
 
 //refresh etdikde ekranda secdiyimiz metni gosterir
 

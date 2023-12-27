@@ -20,7 +20,7 @@ document.querySelectorAll('.options .option').forEach(btn=>{
 var array= [
     {
         title:"Full Stack Web Developer",
-        text:"A full-stack developer helps build and maintain both the front-end and the back-end of a website. Learn about full-stack developer skills, salary, and how you can become one. A full-stack developer is a developer or engineer who can build both the front end and the back end of a website.",
+        text:"A full-stack developer helps build and maintain both the front-end and the back-end of a website. Learn about full-stack developer skills, salary, and how you can become one. A full-stack developer is a developer or engineer who can build both the front end and the back end of a website",
         name:"Tommy",
         date:"December 2015 - present",
     },
@@ -32,7 +32,7 @@ var array= [
     },
     {
         title:"Goals",
-        text:"Achieving complex and difficult goals requires focus, long-term diligence, and effort (see Goal pursuit). Success in any field requires forgoing excuses and justifications for poor performance or lack of adequate planning; in short, success requires emotional maturity. The measure of belief that people have in their ability to achieve a personal goal also affects that achievement.",
+        text:"Achieving complex and difficult goals requires focus, long-term diligence, and effort (see Goal pursuit). Success in any field requires forgoing excuses and justifications for poor performance or lack of adequate planning; in short, success requires emotional maturity. The measure of belief that people have in their ability to achieve a personal goal also affects that achievement",
         name:"CUKER",
         date:"November 2017 - present",  
     },
@@ -94,6 +94,46 @@ function choseObject(name){
     btnshow.classList.add("btn");
     btnshow.textContent = "more";
     mydiv.appendChild(btnshow);
+
+//---------more or less---------------------
+      
+var intext = selectedObject.text;
+var maxWordCount = 30;
+
+function splitText(text, count) {
+  var words = text.split(" ");
+  var lessText = words.slice(0, count).join(" ");
+  var hiddenText = words.slice(count).join(" ");
+  return { lessText: lessText, hiddenText: hiddenText };
+}
+
+var { lessText, hiddenText } = splitText(intext, maxWordCount);
+
+var span1 = document.createElement("span");
+var span2 = document.createElement("span");
+metn.appendChild(span2);
+metn.appendChild(span1);
+
+span1.textContent = lessText + " ...";
+
+span2.style.display = "none";
+
+btnshow.addEventListener("click", function () {
+  if (span2.style.display === "block") {
+    // Daha fazla göster butonu tıklanırsa
+    span2.style.display = "none";
+    btnshow.textContent = "more";
+    span1.textContent = lessText + "...";
+  } else {
+
+    span2.style.display = "block";
+    btnshow.textContent = "less";
+    span1.textContent = hiddenText + " " + hiddenText;
+  }
+});
+
+//---------------------------------------
+  
 }
 
 //refresh etdikde ekranda secdiyimiz metni gosterir
@@ -103,20 +143,3 @@ window.addEventListener('load', function(){
 });
 
 //----------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
